@@ -1,7 +1,6 @@
 import os
 import sendgrid
 from sendgrid.helpers.mail import Mail, Email, To, Content
-from sympy import content
 
 
 def send_email(subject, body):
