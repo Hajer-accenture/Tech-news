@@ -6,7 +6,7 @@ from sendgrid.helpers.mail import Mail, Email, To, Content
 def send_email(subject, body):
     api_key = os.environ.get("SendGrid_API_KEY")
     email_to = os.environ.get("EMAIL_TO")
-    email_from = "hajer.hammouda@accenture.com"
+    email_from = os.environ.get("EMAIL_FROM")
 
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
     from_email = Email(email_from)
@@ -21,3 +21,7 @@ def send_email(subject, body):
     response = sg.client.mail.send.post(request_body=mail_json)
     print(response.status_code)
     print(response.headers)
+
+
+if __name__ == "__main__":
+    send_email("test", "Test if email sending is working")
