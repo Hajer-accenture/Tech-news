@@ -2,6 +2,7 @@ from crewai import Crew
 from agents.fetcher import fetcher_agent
 from agents.summarizer import summarizer_agent
 from agents.sender import sender_agent
+from send_email import send_email
 from tasks.fetch_task import fetch_task
 from tasks.summarize_task import summarize_task
 from tasks.send_task import send_task
@@ -17,4 +18,5 @@ crew = Crew(
 )
 
 if __name__ == "__main__":
-    crew.kickoff()
+    report = crew.kickoff()
+    send_email("Your Daily News", report)

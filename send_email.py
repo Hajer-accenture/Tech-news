@@ -1,30 +1,21 @@
 import os
-import requests
+import sendgrid
+from sendgrid.helpers.mail import Mail, Email, To, Content
 
 def send_email(subject, body):
     api_key = os.environ.get("SendGrid_API_KEY")
     email_to = os.environ.get("EMAIL_TO")
     email_from = "noreply@technews.com"
 
-    sendgrid_api = "https://sendgrid.com/v3/mail/send"
+    sg = sendgrid.SendGridAPIClient(api_key=api_key)
+    from_email = Email(email_from)
+    to_email = To(email_to)
+    mail = Mail(from_email, to_email, subject, body)
 
-    if not (api_key and email_to and email_from):
-        raise ValueError("Missing Email environment variables")
+    # Get a JSON-ready representation of the Mail object
+    mail_json = mail.get()
 
-    response = requests.post(
-        sendgrid_api, headers={
-            "Authorization": f"Bearer {api_key}",
-            "content_type": "application/json"
-        },
-        json={
-            "personalizations": [{"to": [{"email": email_to}]}],
-            "from": {"email": email_from},
-            "subject": subject,
-            "content": [{"type": "text/plain", "value": body}]
-        }
-    )
-
-    if response.status_code != 202:
-        raise Exception(f"Failed to send email: {response.status_code}, {response.text}")
-
-    print("Email Sent Successfully!")
+    # Send an HTTP POST request to /mail/send
+    response = sg.client.mail.send.post(request_body=mail_json)
+    print(response.status_code)
+    print(response.headers)
