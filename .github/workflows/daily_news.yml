@@ -25,8 +25,9 @@ jobs:
 
       - name: Execute Crew agents
         env:
-          OPENAI_API_KEY: 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
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
         run: python run_crew.py
+
 
 
