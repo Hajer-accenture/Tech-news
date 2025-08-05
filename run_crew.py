@@ -19,4 +19,4 @@ crew = Crew(
 
 if __name__ == "__main__":
     report = crew.kickoff()
-    send_email("Your Daily News", report)
+    send_email("Your Daily News", str(report))
