@@ -12,8 +12,8 @@ summarize_task.agent = summarizer_agent
 send_task.agent = sender_agent
 
 crew = Crew(
-    tasks=[fetch_task, summarize_task],
-    agents=[fetcher_agent, summarizer_agent],
+    tasks=[fetch_task, summarize_task, send_task],
+    agents=[fetcher_agent, summarizer_agent, sender_agent],
 )
 
 if __name__ == "__main__":
