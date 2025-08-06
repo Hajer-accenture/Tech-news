@@ -26,7 +26,7 @@ jobs:
       - name: Execute Crew agents
         env:
           OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY }}
-          SENGRID_API_KEY: ${{secrets.SENGRID_API_KEY }}
+          SENGRID_API_KEY: ${{secrets.SENDGRID_API_KEY }}
           EMAIL_TO: ${{secrets.EMAIL_TO }}
           
         run: python send_email.py

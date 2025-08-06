@@ -5,10 +5,9 @@ from sendgrid.helpers.mail import Mail, Email, To, Content
 
 
 def send_email(subject, body):
-    api_key = os.environ.get("SENGRID_API_KEY")
+    api_key = os.environ.get("SENDGRID_API_KEY")
     email_to = os.environ.get("EMAIL_TO")
     email_from = os.environ.get("EMAIL_FROM")
-
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
     from_email = Email(email_from)
     to_email = To(email_to)
