@@ -5,11 +5,11 @@ from sendgrid.helpers.mail import Mail
 
 def send_email(subject, body):
     api_key = os.environ.get("SENDGRID_API_KEY")
-    email_to = os.environ.get("EMAIL_TO")
-    email_from = os.environ.get("EMAIL_FROM")
+    email_to = os.environ.get("EMAIL_TO").strip()
+    email_from = os.environ.get("EMAIL_FROM").strip()
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
-    print(type(body))
-    mail = Mail(str(email_from), str(email_to), subject, body)
+    print(email_to, email_from)
+    mail = Mail(email_from, email_to, subject, body)
 
     # Send an HTTP POST request to /mail/send
     response = sg.send(mail)
