@@ -7,12 +7,12 @@ companies = [
 
 fetch_clients_task = Task(
     description=(
-        f"Search and summarize the most recent and relevant news (past 2–3 days) of 2025 "
+        f"Collect all relevant company news published within the last 2–3 days from today 06 August 2025"
         f"for the following companies: {', '.join(companies)}. "
-        "Focus on news related to innovation, digital transformation, R&D, AI, cybersecurity, electrification, or other emerging technologies. "
-        "Focus also on financial or related political news."
+        "Prioritize topics related to innovation, digital transformation, R&D, AI, cybersecurity, electrification, or other emerging technologies. "
+        "Include items like leadership changes, investor or market reactions, regulatory shifts, and strategic updates."
     ),
     expected_output=(
-        "A list of bullet points (3–4 per company) summarizing key financial, political and tech-related news from the past 2–3 days (today is August 2025)"
+        "A list of bullet points of key financial, political and tech-related news from the past 2–3 days from today 06 August 2025"
     )
 )

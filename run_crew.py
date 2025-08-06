@@ -28,4 +28,4 @@ if __name__ == "__main__":
 
     clients_crew.kickoff()
     summarize_task_output = summarize_task.output
-    send_email(subject="Your Daily News", body=str(summarize_task_output))
+    send_email(subject="Your Clients Daily News", body=str(summarize_task_output))
