@@ -21,12 +21,8 @@ crew = Crew(
 if __name__ == "__main__":
     output = crew.kickoff()
     print("*****")
-    print(type(output))
+    send_task_output = str(send_task.output)
     print("****")
-    send_task_output = next(
-        (task for task in output.tasks_output if task.name.lower() == "send_task"),
-        None
-    )
     print(send_task_output)
     print(str(send_task_output))
     send_email("Your Daily News", str(send_task_output))
