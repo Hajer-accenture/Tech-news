@@ -1,6 +1,5 @@
 import os
 import sendgrid
-from requests import HTTPError
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
 
@@ -18,7 +17,7 @@ def send_email(subject, body):
         response = sg.send(mail)
         print(response.status_code)
         print(response.headers)
-    except HTTPError as e:
+    except Exception  as e:
         print("error here")
         print (e)
 
