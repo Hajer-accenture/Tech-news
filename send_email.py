@@ -10,7 +10,7 @@ def send_email(subject, body):
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
     from_email = Email(email_from)
     to_email = To(email_to)
-    mail = Mail(from_email, to_email, subject, body)
+    mail = Mail('hammoudahajer8@gmail.com', 'hajer.hammouda@accenture.com', subject, body)
 
     # Send an HTTP POST request to /mail/send
     try:
@@ -19,7 +19,7 @@ def send_email(subject, body):
         print(response.headers)
     except Exception  as e:
         print("error here")
-        print (e)
+        print (str(e))
 
 
 if __name__ == "__main__":
