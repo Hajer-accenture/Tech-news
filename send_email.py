@@ -12,13 +12,9 @@ def send_email(subject, body):
     mail = Mail(email_from, email_to, subject, body)
 
     # Send an HTTP POST request to /mail/send
-    try:
-        response = sg.send(mail)
-        print(response.status_code)
-        print(response.headers)
-    except Exception  as e:
-        print("error here")
-        print (str(e))
+    response = sg.send(mail)
+    print(response.status_code)
+    print(response.headers)
 
 
 if __name__ == "__main__":

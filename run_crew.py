@@ -20,9 +20,7 @@ crew = Crew(
 
 if __name__ == "__main__":
     output = crew.kickoff()
-    print("*****")
     send_task_output = str(send_task.output)
-    print("****")
-    print(send_task_output)
+    print(type(send_task_output))
     print(str(send_task_output))
-    send_email("Your Daily News", str(send_task_output))
+    send_email(subject="Your Daily News", body=str(send_task_output))
