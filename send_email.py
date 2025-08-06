@@ -8,11 +8,9 @@ def send_email(subject, body):
     email_to = os.environ.get("EMAIL_TO")
     email_from = os.environ.get("EMAIL_FROM")
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
-    print("emails")
-    print(email_to)
-    print("***")
-    print(email_from)
-    mail = Mail(email_from, email_to, subject, body)
+
+    email_list = [email.strip() for email in email_to.split(",") if email.strip()]
+    mail = Mail(email_from, email_list, subject, body)
 
     # Send an HTTP POST request to /mail/send
     response = sg.send(mail)
