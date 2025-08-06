@@ -29,7 +29,8 @@ jobs:
           SENGRID_API_KEY: ${{secrets.SENGRID_API_KEY }}
           EMAIL_TO: ${{secrets.EMAIL_TO }}
           
-        run: python run_crew.py
+        run: python send_email.py
+
 
 
 
