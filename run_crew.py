@@ -23,4 +23,4 @@ if __name__ == "__main__":
     send_task_output = str(send_task.output)
     print(type(send_task_output))
     print(str(send_task_output))
-    send_email(subject="Your Daily News", body=str(send_task_output))
+    send_email(subject="Your Daily News", body=str("send_task_output"))
