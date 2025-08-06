@@ -12,8 +12,7 @@ def send_email(subject, body):
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
     from_email = Email(email_from)
     to_email = To(email_to)
-    content = Content("text/plain", body)
-    mail = Mail(from_email, to_email, subject, content)
+    mail = Mail(from_email, to_email, subject, body)
 
     # Send an HTTP POST request to /mail/send
     try:
