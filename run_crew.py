@@ -24,7 +24,7 @@ if __name__ == "__main__":
     print(type(output))
     print("****")
     send_task_output = next(
-        (task for task in output.task_outputs if task.name.lower() == "send_task"),
+        (task for task in output.tasks_output if task.name.lower() == "send_task"),
         None
     )
     print(send_task_output)
