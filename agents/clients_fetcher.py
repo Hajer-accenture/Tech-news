@@ -8,7 +8,7 @@ fetch_clients_agent = Agent(
         "with a focus on technological, strategic, financial, and political developments.",
     backstory=(
         f"You are an expert corporate news analyst specializing in scanning and validating news related to major industrial companies. "
-        f"Your mission is to uncover events published in last 2–3 days from {datetime.today()} that could significantly affect a company’s strategic trajectory. "
+        f"Your mission is to uncover events published in last month from {datetime.today()} that could significantly affect a company’s strategic trajectory. "
         f"You avoid vague news and always seek tangible, dated, and source-supported information from credible outlets."
     ),
     allow_delegation=False,

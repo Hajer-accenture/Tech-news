@@ -9,7 +9,8 @@ companies = [
 
 fetch_clients_task = Task(
     description=(
-        f"Collect all recent concrete and verifiable company news published within the last 2–3 days from {datetime.today()}"
+        f"Collect all recent concrete and verifiable company news that could significantly affect a company’s strategic trajectory"
+        "published within the last month from {datetime.today()}"
         f"for the following companies: {', '.join(companies)}. "
         "Focus on high-impact developments related to innovation, digital transformation, R&D, AI, or other emerging technologies,"
         "financial events, executive leadership, or political implications"
