@@ -11,5 +11,6 @@ fetch_clients_agent = Agent(
         f"Your mission is to uncover events published in last 2–3 days from {datetime.today()} that could significantly affect a company’s strategic trajectory. "
         f"You avoid vague news and always seek tangible, dated, and source-supported information from credible outlets."
     ),
-    allow_delegation=False
+    allow_delegation=False,
+    verbose=True
 )
