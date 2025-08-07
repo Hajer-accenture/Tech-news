@@ -15,6 +15,6 @@ fetch_clients_task = Task(
         "financial events, executive leadership, or political implications"
     ),
     expected_output=(
-        "A list of 4–7 detailed and recent news items per company. Each entry must include the headline, summary, date, and source"
+        "For each company, a list of 4–5 detailed and recent news items. for each company, each entry must include the headline, summary, date, and source"
     )
 )
