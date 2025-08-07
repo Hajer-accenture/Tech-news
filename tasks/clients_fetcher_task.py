@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from crewai import Task
 
 companies = [
@@ -7,12 +9,12 @@ companies = [
 
 fetch_clients_task = Task(
     description=(
-        f"Collect all relevant company news published within the last 2–3 days from today 06 August 2025"
+        f"Collect all recent concrete and verifiable company news published within the last 2–3 days from {datetime.today()}"
         f"for the following companies: {', '.join(companies)}. "
-        "Prioritize topics related to innovation, digital transformation, R&D, AI, cybersecurity, electrification, or other emerging technologies. "
-        "Include items like leadership changes, investor or market reactions, regulatory shifts, and strategic updates."
+        "Focus on high-impact developments related to innovation, digital transformation, R&D, AI, or other emerging technologies,"
+        "financial events, executive leadership, or political implications"
     ),
     expected_output=(
-        "A list of bullet points of key financial, political and tech-related news from the past 2–3 days from today 06 August 2025"
+        "A list of 4–7 detailed and recent news items. Each entry must include the headline, summary, date, and source"
     )
 )
