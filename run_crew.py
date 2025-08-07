@@ -12,19 +12,19 @@ fetch_task.agent = fetcher_agent
 summarize_task.agent = summarizer_agent
 fetch_clients_task.agent = fetch_clients_agent
 
-news_crew = Crew(
-    tasks=[fetch_task, summarize_task],
-    agents=[fetcher_agent, summarizer_agent],
-)
+# news_crew = Crew(
+#   tasks=[fetch_task, summarize_task],
+#   agents=[fetcher_agent, summarizer_agent],
+# )
 clients_crew = Crew(
     tasks=[fetch_clients_task, summarize_task],
     agents=[fetch_clients_agent, summarizer_agent],
 )
 
 if __name__ == "__main__":
-    news_crew.kickoff()
-    summarize_task_output = summarize_task.output
-    send_email(subject="Your Daily News", body=str(summarize_task_output))
+    #news_crew.kickoff()
+    #summarize_task_output = summarize_task.output
+    #send_email(subject="Your Daily News", body=str(summarize_task_output))
 
     clients_crew.kickoff()
     summarize_task_output = summarize_task.output
